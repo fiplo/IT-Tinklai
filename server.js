@@ -11,6 +11,7 @@ var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var multer = require("multer");
+var ejsLint = require("ejs-lint");
 
 var configDB = require("./config/database.js");
 
@@ -18,6 +19,8 @@ var configDB = require("./config/database.js");
 mongoose.connect(configDB.url);
 
 require("./config/passport")(passport);
+
+app.use("/uploads", express.static("uploads"));
 
 // Express setup
 app.use(morgan("dev")); //Log everything

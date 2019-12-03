@@ -80,6 +80,13 @@ module.exports = function(app, passport, multer, storage) {
     res.redirect("/");
   });
 
+  app.get("/list", function(req, res) {
+    Offer.find({}).exec(function(err, offer) {
+      if (err) throw err;
+      res.render("listposts.ejs", { offer: offer });
+    });
+  });
+
   //User checkup
   function isLoggedIn(req, res, next) {
     //If authenticated, carry on
