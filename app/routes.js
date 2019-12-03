@@ -1,4 +1,6 @@
-module.exports = function(app, passport) {
+var Offer = require("../app/models/post");
+
+module.exports = function(app, passport, multer, storage) {
   // Main page
   app.get("/", function(req, res) {
     res.render("index.ejs");
@@ -40,6 +42,38 @@ module.exports = function(app, passport) {
     });
   });
 
+  //Posting page
+  app.get("/post", isLoggedIn, function(req, res) {
+    res.render("post.ejs", {
+      user: req.user
+    });
+  });
+
+  app.post(
+    "/post",
+    multer({ storage: storage, dest: "./uploads/" }).single("file"),
+    function(req, res) {
+      console.log(req);
+      var offer = new Offer({
+        originalname: req.file.originalname,
+        destination: req.file.destination,
+        filename: req.file.filename,
+        path: req.file.path,
+        postname: req.postname,
+        desc: req.body.postdesc,
+        postname: req.body.postname,
+        created_at: Date.now(),
+        contact: req.user.email
+      });
+      offer.save(function(err) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.redirect("/profile");
+        }
+      });
+    }
+  );
   //Logout
   app.get("/logout", function(req, res) {
     req.logout();

@@ -1,15 +1,15 @@
 var mongoose = require("mongoose");
 
 var postSchema = mongoose.Schema({
-  images: {
-    path1: String,
-    path2: String,
-    path3: String,
-    path4: String
-  },
+  originalname: String,
+  destination: String,
+  filename: String,
+  path: String,
+  postname: String,
   desc: String,
-  until: Date,
+  created_at: Date,
+  updated_at: Date,
   contact: String
 });
 
-module.exports = mongoose.model("Posts", postSchema);
+module.exports = mongoose.model("Offer", postSchema);
