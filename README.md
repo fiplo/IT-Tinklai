@@ -10,7 +10,9 @@ Kompiuterinių tinklų IT projektas, siekiantis padaryti paprastą skelbimų por
 
 Šiam projektui jums reikės įsidiegti šias priklausomybes.
 
+
 `node` - [Node.js runtime](https://github.com/nodejs/node)
+
 `mongo` - [MongoDB Database](https://github.com/mongodb/mongo)
 
 ### Instaliacija
