@@ -2,7 +2,7 @@
 
 Kompiuterinių tinklų IT projektas, siekiantis padaryti paprastą skelbimų portalą
 
-## Getting Started
+## Projekto Pasiruošimas 
 
 Šios instrukcijos jums padės įsidiegti projekto kopiją.
 
