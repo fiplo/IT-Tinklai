@@ -4,11 +4,11 @@ Kompiuterinių tinklų IT projektas, siekiantis padaryti paprastą skelbimų por
 
 ## Getting Started
 
-Šios instrukcijos jums padės pasijungti projekto kopiją.
+Šios instrukcijos jums padės įsidiegti projekto kopiją.
 
 ### Prielaidos
 
-Šiam projektui jums reikės įsidiegti šitas priklausomybes.
+Šiam projektui jums reikės įsidiegti šias priklausomybes.
 
 `node` - [Node.js runtime](https://github.com/nodejs/node)
 `mongo` - [MongoDB Database](https://github.com/mongodb/mongo)
