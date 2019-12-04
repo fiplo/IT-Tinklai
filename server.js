@@ -6,6 +6,7 @@ var mongoose = require("mongoose");
 var passport = require("passport");
 var flash = require("connect-flash");
 
+var fs = require("fs");
 var morgan = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
@@ -16,6 +17,11 @@ var ejsLint = require("ejs-lint");
 var configDB = require("./config/database.js");
 
 // Config
+
+if (!fs.existsSync("uploads/")) {
+  fs.mkdirSync("uploads/");
+}
+
 mongoose.connect(configDB.url);
 
 require("./config/passport")(passport);

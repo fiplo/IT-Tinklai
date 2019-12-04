@@ -5,28 +5,7 @@
 <body>
 <div class="container">
 
-    <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Skelbimu sarasas</h1>
-    </div>
-
-    <div class "row-fluid">
-      <ul class="thumbnails">
-      <% offer.forEach(function(offer) {%>
-          <li class = "span4">
-          <div class="thumbnail">
-              <img src="<%= offer.path %>" class="img-rounded" style="width:256px; height:auto" > 
-          </div>
-          <div class="caption">
-            <!--   style="max-width:100%; max-height:33%; object-fit: contain"> -->
-              <h3> <%= offer.postname %> </hr>
-              <p class="list-group-item-text"><%= offer.desc %></p>
-              <p>Creation date: <%= offer.created_at %> </p>
-          </div>
-          </li>
-
-      <% }) %>
-      </ul>
-    </div>
+<%- include('partial/list.ejs') %>
 
 </div>
 </body>
