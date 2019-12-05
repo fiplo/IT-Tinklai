@@ -27,6 +27,7 @@ mongoose.connect(configDB.url);
 require("./config/passport")(passport);
 
 app.use("/uploads", express.static("uploads"));
+app.use("/public", express.static("public"));
 
 // Express setup
 app.use(morgan("dev")); //Log everything
